@@ -1,16 +1,18 @@
 import styled from "styled-components";
+import MenuButton from "../components/menu/MenuButton";
+import Notification from "../components/Notifications";
 import ProfileSettings from "../components/ProfileSettings";
 import SearchInput from "../components/SearchInput";
 import MenuIcon from "../icons/MenuIcon";
 
-const ContainerHeader = styled.header`
+const HeaderContainer = styled.header`
   position: sticky;
   top: 0;
-  height: 3rem;
+  height: 3.3rem;
   /* background-color: red; */
 `;
 
-const WrapperNavigation = styled.nav`
+const HeaderNavigation = styled.nav`
   display: flex;
   flex-direction: row;
   place-items: center;
@@ -19,28 +21,25 @@ const WrapperNavigation = styled.nav`
   justify-content: space-between;
 `;
 
-const WrapperActions = styled.div`
+const HeaderRightActions = styled.div`
   display: flex;
   flex-direction: row;
   place-items: center;
-`;
-
-const MenuIconEl = styled(MenuIcon)`
-  height: 1.5rem;
-  width: 1.5rem;
+  gap: 1.5rem;
 `;
 
 const Header = () => {
   return (
-    <ContainerHeader>
-      <WrapperNavigation>
-        <MenuIconEl />
+    <HeaderContainer>
+      <HeaderNavigation>
+        <MenuButton />
         <SearchInput />
-        <WrapperActions>
+        <HeaderRightActions>
+          <Notification />
           <ProfileSettings />
-        </WrapperActions>
-      </WrapperNavigation>
-    </ContainerHeader>
+        </HeaderRightActions>
+      </HeaderNavigation>
+    </HeaderContainer>
   );
 };
 
